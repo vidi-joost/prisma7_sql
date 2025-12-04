@@ -1,6 +1,7 @@
 import { prisma } from "./prisma";
 
 const result = await prisma.user.findFirstOrThrow({
+  relationLoadStrategy: "query",
   where: {
     id: 1
   },
